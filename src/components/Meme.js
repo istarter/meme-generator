@@ -23,7 +23,7 @@ const Meme = () => {
       <div className="form">
         <input type={"text"} className="form-input" placeholder="Top Text" />
         <input type={"text"} className="form-input" placeholder="Bottom Text" />
-        <button onClick={addItem} className="form-button">
+        <button onClick={getMemeImage} className="form-button">
           Get a new meme image
         </button>
       </div>
