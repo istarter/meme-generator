@@ -53,3 +53,6 @@ main {
     cursor: pointer;
     color: white;
 }
+.meme-image {
+    max-width: 100%;
+}

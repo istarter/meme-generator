@@ -1,21 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import MamesData from "../MemesData";
 
 const Meme = () => {
+  const [memeImage, setMemeImage] = useState("");
+
   const getMemeImage = () => {
     const memesArray = MamesData.data.memes;
+    console.log(memesArray);
     const randomNumber = Math.floor(Math.random() * memesArray.length);
-    const url = memesArray[randomNumber].url;
-    // console.log(url);
-  };
-
-  const thingsArray = ["Thing 1", "Thing 2"];
-  const thingsElements = thingsArray.map((thing) => <p key={thing}>{thing}</p>);
-  //   console.log(thingsElements);
-  const addItem = () => {
-    const newThing = `Thing ${thingsArray.length + 1}`;
-    thingsArray.push(newThing);
-    console.log(thingsArray);
+    setMemeImage(memesArray[randomNumber].url);
   };
 
   return (
@@ -27,6 +20,7 @@ const Meme = () => {
           Get a new meme image
         </button>
       </div>
+      <img src={memeImage} className="meme-image" />
     </main>
   );
 };
